@@ -9,6 +9,10 @@ button {
   border: 0px;
   transition: background-color 0.5s;
 }
+.small {
+  font-size: small;
+  text-align: center;
+}
 .city-form {
   padding-top: 10px;
   margin: 0;
