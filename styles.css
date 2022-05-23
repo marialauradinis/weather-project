@@ -1,0 +1,61 @@
+button {
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 13px;
+  padding: 3px 10px;
+  margin-bottom: 10px;
+  border: 0px;
+  transition: background-color 0.5s;
+}
+.city-form {
+  padding-top: 10px;
+  margin: 0;
+}
+.current:hover {
+  background-color: #242f9b;
+}
+.search:hover {
+  background-color: #019267;
+}
+.search {
+  background-color: #14c38e;
+}
+.current {
+  background-color: #646fd4;
+}
+.container {
+  max-width: 600px;
+  background: linear-gradient(#e1f2fb, #f1f9f9);
+  border-radius: 15px;
+  text-align: center;
+}
+.card {
+  background: linear-gradient(#e1f2fb, #f1f9f9);
+}
+.city {
+  font-size: 30px;
+  text-align: left;
+}
+.day-time {
+  text-align: left;
+}
+.conditions {
+  font-weight: lighter;
+  text-align: right;
+  line-height: 25px;
+}
+.temperature {
+  font-size: 28px;
+  line-height: 2px;
+}
+.units {
+  margin-left: 70px;
+  font-size: 15px;
+  line-height: 2px;
+}
+
+.emoji {
+  font-size: 60px;
+}
