@@ -1,4 +1,4 @@
-function handleSubmit(event) {
+function handleSubmit(city) {
   event.preventDefault();
   let cityElement = document.querySelector("#city-input");
   cityElement = `${cityElement.value}`;
@@ -6,7 +6,7 @@ function handleSubmit(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityElement}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(displayWeather);
 }
-function searchLocation(position) {
+function searchLocation(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
@@ -30,11 +30,11 @@ function displayWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-function CurrentLocation(event) {
+function currentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
-function DateAndTime() {
+function dateAndTime() {
   let now = new Date();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[now.getDay()];
@@ -55,6 +55,7 @@ let cityForm = document.querySelector("#city-form");
 cityForm = addEventListener("submit", handleSubmit);
 
 let currentButton = document.querySelector("#current-button");
-currentButton.addEventListener("click", CurrentLocation);
+currentButton.addEventListener("click", currentLocation);
 
-DateAndTime();
+dateAndTime();
+searchLocation("London");
