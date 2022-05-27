@@ -14,7 +14,6 @@ function searchLocation(position) {
   axios.get(apiUrl).then(displayWeather);
 }
 function displayWeather(response) {
-  console.log(response.data);
   let cityElement = document.querySelector("#city-text");
   cityElement.innerHTML = `${response.data.name}`;
   let TemperatureDisplay = document.querySelector("#temperature");
