@@ -9,10 +9,6 @@ button {
   border: 0px;
   transition: background-color 0.5s;
 }
-.small {
-  font-size: small;
-  text-align: center;
-}
 .city-form {
   padding-top: 10px;
   margin: 0;
@@ -41,25 +37,25 @@ button {
 .city {
   font-size: 30px;
   text-align: left;
+  line-height: 80px;
 }
-.day-time {
+.condition {
+  text-transform: capitalize;
+}
+.conditions-wind {
+  line-height: 5px;
+}
+
+.row {
+  line-height: 37px;
+}
+.col-sm-4 {
   text-align: left;
 }
-.conditions {
-  font-weight: lighter;
-  text-align: right;
-  line-height: 25px;
+.col-sm-6 {
+  text-align: left;
 }
 .temperature {
   font-size: 28px;
   line-height: 2px;
-}
-.units {
-  margin-left: 70px;
-  font-size: 15px;
-  line-height: 2px;
-}
-
-.emoji {
-  font-size: 60px;
 }
