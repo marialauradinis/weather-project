@@ -66,3 +66,6 @@ a {
   color: #000;
   cursor: default;
 }
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+}
