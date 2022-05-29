@@ -27,12 +27,12 @@ button {
 }
 .container {
   max-width: 600px;
-  background: linear-gradient(#e1f2fb, #f1f9f9);
+  background: linear-gradient(#b9cced, #d3f4ff);
   border-radius: 15px;
   text-align: center;
 }
 .card {
-  background: linear-gradient(#e1f2fb, #f1f9f9);
+  background: linear-gradient(#b9cced, #d3f4ff);
 }
 .city {
   font-size: 30px;
