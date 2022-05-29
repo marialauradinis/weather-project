@@ -13,6 +13,12 @@ function searchLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
+function getForecast(coordinates) {
+  let apiKey = "46e91c132e9080dd0c810b591007d18d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeather(response) {
   let cityElement = document.querySelector("#city-text");
   cityElement.innerHTML = `${response.data.name}`;
@@ -32,7 +38,9 @@ function displayWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
   celsiusTemperature = Math.round(response.data.main.temp);
+  getForecast(response.data.coord);
 }
+
 function currentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
@@ -70,7 +78,8 @@ function displayCelsius(event) {
   temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
@@ -108,4 +117,3 @@ let celsiusTemperature = null;
 
 dateAndTime();
 searchCity("London");
-displayForecast();
